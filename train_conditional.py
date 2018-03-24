@@ -10,7 +10,7 @@ import matplotlib
 matplotlib.use('Agg')
 
 from models import CVAE, CVAEGAN, CALI, TripleGAN
-from datasets import load_data, mnist, svhn
+from datasets import load_data, mnist, svhn, hairdata
 
 models = {
     'cvae': CVAE,
@@ -47,6 +47,8 @@ def main():
         datasets = mnist.load_data()
     elif args.dataset == 'svhn':
         datasets = svhn.load_data()
+    elif args.dataset == 'hair':
+        datasets = hairdata.load_data()
     else:
         datasets = load_data(args.dataset)
 
