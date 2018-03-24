@@ -53,7 +53,7 @@ def main():
         datasets = hairdata_4tags.load_data()
     else:
         datasets = load_data(args.dataset)
-
+    print('aa')
     # Construct model
     if args.model not in models:
         raise Exception('Unknown model:', args.model)

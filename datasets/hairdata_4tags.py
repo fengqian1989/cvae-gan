@@ -21,7 +21,7 @@ def load_img_to_numpy(dirname,suffix,labelDictionary):
     label = []
     p = Path(dirname)
     file_dirnames = list(p.glob('**/*'))
-    print(file_dirnames)
+    # print(file_dirnames)
     for filename in file_dirnames:
         if filename.suffix == suffix:
             class_name = filename.parts[-2]
@@ -32,6 +32,7 @@ def load_img_to_numpy(dirname,suffix,labelDictionary):
             numpy_images.append(array_img)
     numpy_images = np.asarray(numpy_images,dtype="float32")
     label = np.asarray(label,dtype="float32")
+    print(label[0])
     label = keras.utils.to_categorical(label)
     numpy_images /= 255
     return numpy_images,label
