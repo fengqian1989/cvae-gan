@@ -49,7 +49,7 @@ def main():
         datasets = svhn.load_data()
     elif args.dataset == 'hair':
         datasets = hairdata.load_data()
-    elif args.dataset == 'hair':
+    elif args.dataset == 'hair_4tags':
         datasets = hairdata_4tags.load_data()
     else:
         datasets = load_data(args.dataset)
